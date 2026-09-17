@@ -13,7 +13,7 @@ export default defineConfig({
     reporter: 'html',
 
     use: {
-        headless: false,
+        headless: true,
         screenshot: 'only-on-failure',
         trace: 'on-first-retry'
     },
@@ -29,22 +29,22 @@ export default defineConfig({
             }
         },
 
-        // {
-        //     name: 'Firefox-Composite',
+        {
+            name: 'Firefox-Composite',
 
-        //     use: {
-        //         ...devices['Desktop Firefox'],
-        //         browserName: 'firefox'
-        //     }
-        // },   
-        // {
-        //     name: 'Edge-Transfer',
+            use: {
+                ...devices['Desktop Firefox'],
+                browserName: 'firefox'
+            }
+        },   
+        {
+            name: 'Edge-Transfer',
 
-        //     use: {
-        //         ...devices['Desktop Chrome'],
-        //         browserName: 'chromium',
-        //         channel: 'msedge'
-        //     }
-        // }
+            use: {
+                ...devices['Desktop Chrome'],
+                browserName: 'chromium',
+                channel: 'msedge'
+            }
+        }
     ]
 });
